@@ -91,6 +91,6 @@ let firstName = prompt("Ваше ім'я?")
 let lastname = prompt("Ваше прізвище?")
 let age = prompt("Ваш вік?")
 
-let result = `Ваше ім'я ${firstName}` + ' ' + `Ваше прізвище ${lastname}` + ' ' + `Ваш вік ${age}`
+let result = `Ваше ім'я ${firstName}` + ' ' + `Ваше прізвище ${lastname}` + ' ' + `Ваш вік ${+age}`
 
 console.log(result)
