@@ -77,7 +77,7 @@ if (n1 > n2) {
     console.log(n1);
 } else if (n2 > n1) {
     console.log(n2);
-} else if (n1 == n2) {
+} else if (n1 === n2) {
     console.log('Числа рівні');
 } else {
     console.log('ERROR');
@@ -85,9 +85,9 @@ if (n1 > n2) {
 
 //6
 
-let a = false; // не зрозумів як зробити ще з NaN, при a === NaN - непрацює, при a !== NaN всі числа ідуть в дефолт
+let a = false;
 
-if (a === '' || a === 0 || a === false || a === null || a === undefined) {
+if (false || !a) {
     console.log('default');
 } else {
     console.log('not default');
