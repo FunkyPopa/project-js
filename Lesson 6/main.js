@@ -30,12 +30,12 @@ console.log(js.toLowerCase());
 
 //4
 
-// let str = ' dirty string   '
-// console.log(str.substring(1, 13));
+let str1 = ' dirty string   '
+console.log(str1.trim());
 
 //5
 
-let str = 'Ревуть воли як ясла повні';
+let str2 = 'Ревуть воли як ясла повні';
 
 let stringToArray = (str) => {
    let array = str.split(' ');
@@ -43,7 +43,7 @@ let stringToArray = (str) => {
 
 }
 
-console.log(stringToArray(str));
+console.log(stringToArray(str2));
 
 //6
 
@@ -103,41 +103,41 @@ console.log(filteredCousrse);
 //9
 
 let cards = [
-    {cardSuit: 'spade', value: '6', color: 'black'},
-    {cardSuit: 'spade', value: '7', color: 'black'},
-    {cardSuit: 'spade', value: '8', color: 'black'},
-    {cardSuit: 'spade', value: '9', color: 'black'},
-    {cardSuit: 'spade', value: '10', color: 'black'},
+    {cardSuit: 'spade', value: 6, color: 'black'},
+    {cardSuit: 'spade', value: 7, color: 'black'},
+    {cardSuit: 'spade', value: 8, color: 'black'},
+    {cardSuit: 'spade', value: 9, color: 'black'},
+    {cardSuit: 'spade', value: 10, color: 'black'},
     {cardSuit: 'spade', value: 'jack', color: 'black'},
     {cardSuit: 'spade', value: 'queen', color: 'black'},
     {cardSuit: 'spade', value: 'king', color: 'black'},
     {cardSuit: 'spade', value: 'ace', color: 'black'},
 
-    {cardSuit: 'diamond', value: '6', color: 'red'},
-    {cardSuit: 'diamond', value: '7', color: 'red'},
-    {cardSuit: 'diamond', value: '8', color: 'red'},
-    {cardSuit: 'diamond', value: '9', color: 'red'},
-    {cardSuit: 'diamond', value: '10', color: 'red'},
+    {cardSuit: 'diamond', value: 6, color: 'red'},
+    {cardSuit: 'diamond', value: 7, color: 'red'},
+    {cardSuit: 'diamond', value: 8, color: 'red'},
+    {cardSuit: 'diamond', value: 9, color: 'red'},
+    {cardSuit: 'diamond', value: 10, color: 'red'},
     {cardSuit: 'diamond', value: 'jack', color: 'red'},
     {cardSuit: 'diamond', value: 'queen', color: 'red'},
     {cardSuit: 'diamond', value: 'king', color: 'red'},
     {cardSuit: 'diamond', value: 'ace', color: 'red'},
 
-    {cardSuit: 'clubs', value: '6', color: 'black'},
-    {cardSuit: 'clubs', value: '7', color: 'black'},
-    {cardSuit: 'clubs', value: '8', color: 'black'},
-    {cardSuit: 'clubs', value: '9', color: 'black'},
-    {cardSuit: 'clubs', value: '10', color: 'black'},
+    {cardSuit: 'clubs', value: 6, color: 'black'},
+    {cardSuit: 'clubs', value: 7, color: 'black'},
+    {cardSuit: 'clubs', value: 8, color: 'black'},
+    {cardSuit: 'clubs', value: 9, color: 'black'},
+    {cardSuit: 'clubs', value: 10, color: 'black'},
     {cardSuit: 'clubs', value: 'jack', color: 'black'},
     {cardSuit: 'clubs', value: 'queen', color: 'black'},
     {cardSuit: 'clubs', value: 'king', color: 'black'},
     {cardSuit: 'clubs', value: 'ace', color: 'black'},
 
-    {cardSuit: 'heart', value: '6', color: 'red'},
-    {cardSuit: 'heart', value: '7', color: 'red'},
-    {cardSuit: 'heart', value: '8', color: 'red'},
-    {cardSuit: 'heart', value: '9', color: 'red'},
-    {cardSuit: 'heart', value: '10', color: 'red'},
+    {cardSuit: 'heart', value: 6, color: 'red'},
+    {cardSuit: 'heart', value: 7, color: 'red'},
+    {cardSuit: 'heart', value: 8, color: 'red'},
+    {cardSuit: 'heart', value: 9, color: 'red'},
+    {cardSuit: 'heart', value: 10, color: 'red'},
     {cardSuit: 'heart', value: 'jack', color: 'red'},
     {cardSuit: 'heart', value: 'queen', color: 'red'},
     {cardSuit: 'heart', value: 'king', color: 'red'},
@@ -145,15 +145,14 @@ let cards = [
 
     {cardSuit: 'none', value: 'joker', color: 'black'},
     {cardSuit: 'none', value: 'joker', color: 'red'},
-
-]
+];
 
 // - знайти піковий туз
 let findAce = cards.find(value => value.cardSuit === 'spade' && value.value === 'ace');
 console.log(findAce);
 
 // - всі шістки
-let findAllSix = cards.filter(value => value.value === '6');
+let findAllSix = cards.filter(value => value.value === 6);
 console.log(findAllSix);
 
 // - всі червоні карти
@@ -165,15 +164,26 @@ let findAllDiamonds = cards.filter(value => value.cardSuit === 'diamond');
 console.log(findAllDiamonds);
 
 // - всі трефи від 9 та більше
-let clubsFinder = cards.filter(value => value.cardSuit === 'clubs' && value.value >= 9)
+let clubsFinder = cards.filter(value => value.cardSuit === 'clubs' && value.value >= 9 || typeof value.value === 'string' && value.cardSuit === 'clubs' || value.value === 'joker' && value.color === 'black');
 console.log(clubsFinder);
 
 // Додатково по reduce
-// Взяти описану колоду карт, та за допомоги редюсу попакувати всі карти по "мастях" в об'єкт
-// {
-//     spades:[],
-//         diamonds:[],
-//     hearts:[],
-//     clubs:[]
-// }
+let reduce = cards.reduce((accumulator, card) => {
+    if(card.cardSuit === 'spade') {
+        accumulator.spades.push(card)
+    } else if (card.cardSuit === 'diamond') {
+        accumulator.diamonds.push(card)
+    } else if (card.cardSuit === 'heart') {
+        accumulator.hearts.push(card)
+    } else if (card.cardSuit === 'clubs') {
+        accumulator.clubs.push(card)
+    } else if (card.value === 'joker'){
+        accumulator.jokers.push(card)
+    } else {
+        accumulator = 'error'
+    }
+    return accumulator;
+}, {spades:[], diamonds:[], hearts:[], clubs:[], jokers:[]});
+
+console.log(reduce);
 
