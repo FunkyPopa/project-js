@@ -225,7 +225,7 @@ let coursesAndDurationArray = [
 //
 //     let h2 = document.createElement('h2');
 //     div.appendChild(h2)
-//     h2.innerText = Element.title + ' - ' + Element.monthDuration
+//     h2.innerText = element.title + ' - ' + element.monthDuration
 // }
 
 // - Є масив
@@ -243,7 +243,7 @@ let coursesAndDurationArray = [
 //     Завдання робити через цикли.
 
 
-// for (const Element of coursesAndDurationArray) {
+// for (const element of coursesAndDurationArray) {
 //     let div = document.createElement('div');
 //     document.body.appendChild(div)
 //     div.classList.add('item')
@@ -251,12 +251,12 @@ let coursesAndDurationArray = [
 //     let h1 = document.createElement('h1');
 //     div.appendChild(h1)
 //     h1.classList.add('heading')
-//     h1.innerText = Element.title
+//     h1.innerText = element.title
 //
 //     let p = document.createElement('p')
 //     div.appendChild(p)
 //     p.classList.add('description')
-//     p.innerText = Element.monthDuration
+//     p.innerText = element.monthDuration
 //
 // }
 
