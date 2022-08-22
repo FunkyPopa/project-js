@@ -169,16 +169,16 @@ let coursesArray = [
 //     let modules = item.modules
 //
 //     for (const item of modules) {
-//         let liWrapper = document.createElement('div')
+//         let liWrapper = document.createElement('ul')
 //         mainDiv.appendChild(liWrapper)
-//         liWrapper.classList.add('li-Wrapper')
+//         liWrapper.classList.add('ul')
 //
 //         let li = document.createElement('li')
 //         liWrapper.appendChild(li)
 //         li.innerText = item
 //     }
 //
-// }
+// };
 
 //     - створити блок,
 //     - додати йому класи wrap, collapse, alpha, beta
@@ -219,7 +219,7 @@ let coursesAndDurationArray = [
 // Завдання робити через цикли.
 
 
-// for (const Element of coursesAndDurationArray) {
+// for (const element of coursesAndDurationArray) {
 //     let div = document.createElement('div');
 //     document.body.appendChild(div)
 //
