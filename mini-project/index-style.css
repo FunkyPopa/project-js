@@ -1,0 +1,22 @@
+.wrapper {
+    width: 380px;
+
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block {
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    margin-top: 10px;
+
+    height: 30px;
+    width: 150px;
+}

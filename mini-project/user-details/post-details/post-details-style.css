@@ -1,0 +1,36 @@
+.wrapper {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postInfo {
+    width: 50%;
+
+    padding: 10px;
+    border: red 3px solid;
+}
+
+.comentsWrapper {
+    width: 95%;
+
+    margin-top: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.block {
+    width: 22%;
+
+    margin: 5px;
+    padding: 10px;
+    border: red 3px solid;
+}
+
+.purple {
+    color: purple;
+}
